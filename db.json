@@ -1,0 +1,14 @@
+{
+  "plants": [
+    {
+      "scientificName": "test",
+      "commonName": "plant",
+      "id": 2
+    },
+    {
+      "scientificName": "dsa",
+      "commonName": "plant",
+      "id": 3
+    }
+  ]
+}
