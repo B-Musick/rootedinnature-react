@@ -1,7 +1,9 @@
 import { useState } from "react";
+import usePlantsContext from "../hooks/use-plants-context";
 
 function PlantEdit({plant, onSubmit}) {
-    const [scientificName, setScientificName] = useState(plant.scientific_name);
+    const [scientificName, setScientificName] = useState(plant.scientificName);
+    const {editPlantById} = usePlantsContext();
 
     const handleChange = (event) => {
         setScientificName(event.target.value)
@@ -10,7 +12,8 @@ function PlantEdit({plant, onSubmit}) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        onSubmit(plant.id, scientificName);
+        onSubmit();
+        editPlantById(plant.id, scientificName)
     }
 
     return <form className="border rounded-md border-sky-900" onSubmit={handleSubmit}>

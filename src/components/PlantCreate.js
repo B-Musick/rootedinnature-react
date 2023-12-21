@@ -1,28 +1,30 @@
 import { useState } from "react";
+import usePlantsContext from '../hooks/use-plants-context';
 
-function PlantCreate({ onCreate }) {
+function PlantCreate() {
     const [scientificName, setScientificName] = useState('');
     const [commonName, setCommonName] = useState('');
+    const {createPlant} = usePlantsContext();
 
-    const handleChange = (event) => {
+    const handleScientificNameChange = (event) => {
         setScientificName(event.target.value);
     }
 
-    const handleNameChange = (event) => {
+    const handleCommonNameChange = (event) => {
         setCommonName(event.target.value);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault(); // Prevent form submission to browser
 
-        onCreate(scientificName, commonName);
+        createPlant(scientificName, commonName);
         setScientificName(''); // Clear input after submit
     }
 
     return <div>
         <form onSubmit={handleSubmit}>
-            <input className="border rounded-md border-sky-900" value={scientificName} onChange={handleChange} />
-            <input className="border rounded-md border-sky-900" value={commonName} onChange={handleNameChange} />
+            <input className="border rounded-md border-sky-900" value={scientificName} onChange={handleScientificNameChange} />
+            <input className="border rounded-md border-sky-900" value={commonName} onChange={handleCommonNameChange} />
             <button className="border rounded-md border-sky-900">Create Plant</button>
         </form>
     </div>
