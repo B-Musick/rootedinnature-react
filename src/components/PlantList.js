@@ -1,12 +1,16 @@
 import PlantShow from './PlantShow';
+import usePlantsContext from '../hooks/use-plants-context';
 
-function PlantList({plants, onDelete, onEdit}) {
+function PlantList() {
+    const { plants } = usePlantsContext();
+
     const renderedPlants = plants.map((plant)=>{
         // Keys should be unique
-        return <PlantShow onEdit={onEdit} onDelete={onDelete} key={plant.id} plant={plant} />
+        return <PlantShow key={plant.id} plant={plant} />
     })
 
-    return <div className="flex flex-wrap">{renderedPlants}</div>
+    return <div className="flex flex-wrap">
+        {renderedPlants}</div>
 }
 
 export default PlantList;

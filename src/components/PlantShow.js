@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import PlantEdit from "./PlantEdit";
+import PlantsContext from "../context/plants";
 
-function PlantShow({plant, onDelete, onEdit}) {
+function PlantShow({ plant }) {
     const [showEditButton, setShowEditButton] = useState(false);
-
+    const { deletePlantById } = useContext(PlantsContext);
     let { image_url, scientificName, commonName } = plant;
 
     const handleEdit = () => {
@@ -11,12 +12,11 @@ function PlantShow({plant, onDelete, onEdit}) {
     }
 
     const handleDelete = () => {
-        onDelete(plant.id)
+        deletePlantById(plant.id)
     }
 
-    const handleSubmit = (id, scientificName) => {
+    const handleSubmit = () => {
         setShowEditButton(false);
-        onEdit(id, scientificName); // Created in App.js and passed to here
     }
 
     let content = <h3>{scientificName}</h3>;
