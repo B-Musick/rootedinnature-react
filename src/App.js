@@ -5,10 +5,17 @@ import PlantList from './components/PlantList';
 import PlantCreate from './components/PlantCreate';
 import PlantShow from './components/PlantShow';
 import usePlantsContext from './hooks/use-plants-context';
+import Dropdown from './components/Dropdown';
+// import Link from './components/Link';
+import TopNavbar from './components/TopNavBar';
+import Route from './components/Route';
+import AccordionPage from './pages/AccordionPage';
+import SearchPage from './pages/SearchPage';
 
 function App() {
     const { fetchPlants } = usePlantsContext();
     const [searchResult, setSearchResult] = useState([]);
+    const [selected, setSelected] = useState(null);
 
     useEffect(() => {
         // Called when first render to screen
@@ -27,9 +34,42 @@ function App() {
         plant = {...plant, scientificName: plant.scientific_name, commonName: plant.common_name}
         return <PlantShow key={plant.id} plant={plant} />
     })
+    
+    const dropdownOptions = [
+        {
+            id: "1",
+            label: "Scientific Name",
+            value: "scientific"
+        },
+        {
+            id: "2",
+            label: "Common Name",
+            value: "common"
+        }, 
+        {
+            id: "3",
+            label: "Family",
+            value: "family"
+        },   
+    ]
+
+    const handleSelect=(option)=>{
+        setSelected(option)
+    }
 
     return (
         <div>
+            <TopNavbar />
+            <div>
+                <Route path="/accordion">
+                    <AccordionPage />
+                </Route>
+                <Route path="/search">
+                    <SearchPage />
+                </Route>
+            </div>
+
+            <Dropdown value={selected} onChange={handleSelect} options={dropdownOptions}/>
             {renderedPlants}
             <SearchBar onSubmit={handleSubmit} />
             {/* Pass plants down */}

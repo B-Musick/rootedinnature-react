@@ -1,5 +1,7 @@
 import { useState } from "react";
 import usePlantsContext from "../hooks/use-plants-context";
+import Button from "./Button";
+import { BsFillPencilFill } from "react-icons/bs";
 
 function PlantEdit({plant, onSubmit}) {
     const [scientificName, setScientificName] = useState(plant.scientificName);
@@ -19,7 +21,7 @@ function PlantEdit({plant, onSubmit}) {
     return <form className="border rounded-md border-sky-900" onSubmit={handleSubmit}>
             <label>Scientific Name</label>
             <input className="border rounded-md border-sky-900" value={scientificName} onChange={handleChange}></input>
-            <button>Save</button>
+            <Button primary rounded><BsFillPencilFill />Save</Button>
         </form>
 }
 

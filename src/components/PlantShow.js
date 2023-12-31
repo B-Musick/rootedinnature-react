@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import PlantEdit from "./PlantEdit";
 import PlantsContext from "../context/plants";
+import Button from "./Button";
 
 function PlantShow({ plant }) {
     const [showEditButton, setShowEditButton] = useState(false);
@@ -36,8 +37,14 @@ function PlantShow({ plant }) {
                     <div className="text-sm italic">{content}</div>
                 </div>
             </div>
-            <button className="bg-red border rounded-md border-sky-900" onClick={handleEdit}>Edit</button>
-            <button className="bg-red border rounded-md border-sky-900" onClick={handleDelete}>Delete</button>
+            <Button 
+                secondary 
+                rounded 
+                onClick={handleEdit}
+            >
+                Edit
+            </Button>
+            <Button danger rounded onClick={handleDelete}>Delete</Button>
         </div>
     )
 }
