@@ -1,18 +1,22 @@
 // List of links
-import Link from "./Link";
+import { NavLink } from 'react-router-dom';
 
 function TopNavBar(){
     const links = [
         { label: "Accordion", path: "/accordion"},
         { label: "Search", path: "/search" },
+        { label: "Plants", path: "/plants" },
+        { label: "Dropdown", path: "/dropdown" },
     ]
 
     const renderedLinks = links.map((link)=>{
-        return <Link 
+        return <NavLink 
             key={link.label} 
-            to={link.label}
-            activeClassName="font-bold border-b-4 border-blue-500"
-            >{link.label}</Link>
+            to={link.path}
+            className={({isActive})=>
+                isActive ? "font-bold border-b-4 border-blue-500" : ""
+            }
+            >{link.label}</NavLink>
     })
 
     return (
