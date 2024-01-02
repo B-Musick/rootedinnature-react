@@ -1,4 +1,3 @@
-import useNavigationContext from "../hooks/use-navigation-context";
 import className from "classnames";
 
 function Link({to, children, classNames, activeClassName}) {
