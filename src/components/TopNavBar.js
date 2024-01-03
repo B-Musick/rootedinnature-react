@@ -7,6 +7,7 @@ function TopNavBar(){
         { label: "Search", path: "/search" },
         { label: "Plants", path: "/plants" },
         { label: "Dropdown", path: "/dropdown" },
+        { label: "Modal", path: "/modal" },
     ]
 
     const renderedLinks = links.map((link)=>{

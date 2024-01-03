@@ -6,6 +6,7 @@ import AccordionPage from './pages/AccordionPage';
 import SearchPage from './pages/SearchPage';
 import PlantsPage from './pages/PlantsPage';
 import DropdownPage from './pages/DropdownPage';
+import ModalPage from './pages/ModalPage';
 
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/search" element={<SearchPage />} />
                     <Route path="/plants" element={<PlantsPage />} />
                     <Route path="/dropdown" element={<DropdownPage />} />
+                    <Route path="/modal" element={<ModalPage />} />
                 </Routes>
             </Router>
 
