@@ -3,7 +3,7 @@ import axios from "axios";
 
 const PlantsContext = createContext();
 
-function Provider({children}) {
+function PlantProvider({children}) {
     const [plants, setPlants] = useState([]);
 
     const editPlantById = async (id, scientificName) => {
@@ -56,5 +56,5 @@ function Provider({children}) {
     </PlantsContext.Provider>
 }
 
-export {Provider};
+export {PlantProvider};
 export default PlantsContext;

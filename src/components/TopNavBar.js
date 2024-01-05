@@ -8,6 +8,8 @@ function TopNavBar(){
         { label: "Plants", path: "/plants" },
         { label: "Dropdown", path: "/dropdown" },
         { label: "Modal", path: "/modal" },
+        { label: "Collection", path: "/collection" },
+        { label: "Keys", path: "/keys" },
     ]
 
     const renderedLinks = links.map((link)=>{
