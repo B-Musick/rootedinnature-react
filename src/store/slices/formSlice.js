@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {addPlant} from './plantsSlice';
 
 const formSlice = createSlice({
     name: 'form',
@@ -17,6 +18,13 @@ const formSlice = createSlice({
         changeImage(state, action) {
             state.image = action.payload;
         }
+    },
+    extraReducers(builder) {
+        builder.addCase(addPlant, (state, action)=>{
+            // Use this action that we have to reset things
+            state.genus = ''
+            state.species = ''
+        })
     }
 });
 

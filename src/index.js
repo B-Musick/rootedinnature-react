@@ -10,6 +10,7 @@ const el = document.getElementById('root');
 const root = ReactDOM.createRoot(el);
 
 root.render(
+    // Import store to provider so all children components can access
     <Provider store={store}>
         <PlantProvider>
             {/* Everything inside will be passed the value */}

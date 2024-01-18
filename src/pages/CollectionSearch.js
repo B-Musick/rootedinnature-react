@@ -1,15 +1,17 @@
-import PlantCreate from "../components/PlantCreate";
-import PlantList from "../components/PlantList";
+import PlantForm from "../components/PlantForm";
+import PlantCollectionList from "../components/PlantCollectionList";
 import PlantSearch from "../components/PlantSearch";
-import PlantValue from "../components/PlantValue";
+import PlantStatistics from "../components/PlantStatistics";
 
 function CollectionSearch() {
     return (
         <div>
-            <PlantCreate />
-            <PlantList />
+            <PlantForm />
+            <PlantCollectionList />
             <PlantSearch />
-            <PlantValue />
+            <PlantStatistics />
         </div>
     )
 }
+
+export default CollectionSearch;

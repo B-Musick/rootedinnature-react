@@ -9,6 +9,7 @@ import DropdownPage from './pages/DropdownPage';
 import ModalPage from './pages/ModalPage';
 import PlantCollectionPage from './pages/PlantCollection';
 import PlantKeyPage from './pages/PlantKeyPage';
+import CollectionSearch from './pages/CollectionSearch';
 
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -29,6 +30,8 @@ function App() {
                     <Route path="/modal" element={<ModalPage />} />
                     <Route path="/collection" element={<PlantCollectionPage />} />
                     <Route path="/keys" element={<PlantKeyPage />} />
+                
+                    <Route path="/collection/search" element={<CollectionSearch />} />
                 </Routes>
             </Router>
 

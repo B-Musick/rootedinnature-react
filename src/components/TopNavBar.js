@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 function TopNavBar(){
     const links = [
         { label: "Accordion", path: "/accordion"},
+        { label: "CollectionSearch", path: "/collection/search" },
         { label: "Search", path: "/search" },
         { label: "Plants", path: "/plants" },
         { label: "Dropdown", path: "/dropdown" },
